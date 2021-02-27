@@ -1,0 +1,16 @@
+version: "3"
+services:
+  client:
+    build: ./Enderm-Practice/astanait/edu/kz/client
+    command: /app/Endterm-Practice/astanait/edu/kz/client/client
+    restart: always
+    links:
+      - server
+    depends_on:
+      - server
+  server:
+    build: ./Enderm-Practice/astanait/edu/kz/server
+    command: /app/Endterm-Practice/astanait/edu/kz/server/server
+    restart: always
+    ports:
+      - 8081:8081
